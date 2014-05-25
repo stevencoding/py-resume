@@ -1,12 +1,13 @@
 from fetch_linkedin import return_tidy_ln_data
-from fetch_gh import return_tidy_gh_data
+#from fetch_gh import return_tidy_gh_data
 from tidy_tex import *
 
 from person_info import person_info
 
 #Fetch profile data
-names,education,skills,interests,awards = return_tidy_ln_data()
-gh_user,repo_list = return_tidy_gh_data()
+#names,education,skills,interests,awards = return_tidy_ln_data()
+names,education,skills = return_tidy_ln_data()
+#gh_user,repo_list = return_tidy_gh_data()
 
 #Handle data
 
@@ -28,10 +29,10 @@ tex1 += '\\maketitle\n'
 tex1 += gen_sec('Education',education['values'],'year',['id'],False,'edu.tex','')
 
 #Awards
-tex1 += gen_sec('Awards and Honours',awards[0:2],'',['id'],False,'awa.tex','')
+#tex1 += gen_sec('Awards and Honours',awards[0:2],'',['id'],False,'awa.tex','')
 
 #GitHub
-tex1 += gen_sec('Code',repo_list[0:-1],'name',['id'],False,'gh.tex','mycventry')
+#tex1 += gen_sec('Code',repo_list[0:-1],'name',['id'],False,'gh.tex','mycventry')
 
 tex1 += '\\end{document}\n'
 
