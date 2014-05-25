@@ -6,7 +6,7 @@ from person_info import person_info
 
 #Fetch profile data
 #names,education,skills,interests,awards = return_tidy_ln_data()
-names,education,skills = return_tidy_ln_data()
+names,education = return_tidy_ln_data()
 #gh_user,repo_list = return_tidy_gh_data()
 
 #Handle data
