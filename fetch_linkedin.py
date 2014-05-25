@@ -18,7 +18,7 @@ USER_SECRET = secret['OAUS']
 RETURN_URL = 'http://localhost:8000'
 
 def fetch_newest_data():
-    authentication = linkedin.LinkedInDeveloperAuthentication(CONSUMER_KEY, CONSUMER_SECRET,
+    authentication = linkedin.LinkedInDeveloperAuthentication(CONSUMER_KEY, 													 CONSUMER_SECRET,
                                                           USER_TOKEN, USER_SECRET,
                                                           RETURN_URL, linkedin.PERMISSIONS.enums.values())
     # Pass it in to the app...
