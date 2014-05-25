@@ -42,11 +42,11 @@ def return_tidy_ln_data():
     skills = [skill['skill']['name'] for skill in skill_list['values']]
 
 
-    interests_lists = app_data['interests']
-    interests = interests_lists.split(',')
+#    interests_lists = app_data['interests']
+#    interests = interests_lists.split(',')
 
     #strip honours:
-    awards_list =  app_data['honorsAwards']
-    awards = [award for award in awards_list['values']]
+#    awards_list =  app_data['honorsAwards']
+#    awards = [award for award in awards_list['values']]
 
-    return names,education,skills,interests,awards
+    return names,education,skills #,interests,awards
