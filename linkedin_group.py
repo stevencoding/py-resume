@@ -4,7 +4,3 @@ import urllib
 from linkedin_group_routines import *
 
 linkedin_group_read()
-    
-
-
-
