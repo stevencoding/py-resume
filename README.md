@@ -16,6 +16,7 @@ person_info.py: create this file if you wish to include data in your CV/resume t
 About
 -------
 The final code will deal with group info (members & posts) reading.
+The main py code is linkedin_group.py.
 
 The initial code is based on David's code which is to generate cv/resume.
 
