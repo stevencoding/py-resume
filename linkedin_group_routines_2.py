@@ -1,5 +1,8 @@
 # use the py code from https://developer.linkedin.com/documents/quick-start-guide
 
+#!/usr/local/bin/python
+# -*- coding: ascii -*-
+
 import oauth2 as oauth
 import httplib2
 import time, os, simplejson
