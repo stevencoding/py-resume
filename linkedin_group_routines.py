@@ -30,7 +30,13 @@ def linkedin_group_read():
     
     #names = [app_data['firstName'],app_data['lastName']]
     #print names
+    
+    response = make_request(client,"http://api.linkedin.com/v1/people/~")
+    print response
 
     # Use the app to get group info
-    response_json = application.get_group(GROUP_ID)
-    print response_json
+    #group_info = application.get_group(GROUP_ID)
+    #print group_info
+    
+    group_posts = application.get_posts(GROUP_ID, post_ids={0})
+    print group_posts
