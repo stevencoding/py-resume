@@ -10,7 +10,7 @@
 *.csv
 *.txt
 *.tex
-/nppBackup/*
+/nppBackup
 /.idea
 \#*
 
