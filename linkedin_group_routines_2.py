@@ -32,7 +32,12 @@ def linkedin_group_read():
     client = oauth.Client(consumer, access_token)
      
     # Make call to LinkedIn to retrieve your own profile in json
-    resp,content = client.request("http://api.linkedin.com/v1/people/~?format=json", "GET", "")
+    # resp,content = client.request("http://api.linkedin.com/v1/people/~?format=json", "GET", "")
+    
+    # cannot output json, by adding "?format=json". why?
+    #resp,content = client.request("http://api.linkedin.com/v1/groups/"+str(GROUP_ID)+"/posts:(creation-timestamp,title,summary,creator:(first-name,last-name,picture-url,headline),likes,attachment:(image-url,content-domain,content-url,title,summary),relation-to-viewer)?category=discussion&order=recency&modified-since=1302727083000&count=1")
+    
+    resp,content = client.request("http://api.linkedin.com/v1/groups/"+str(GROUP_ID)+"/posts:(title,summary,creator:(first-name,last-name,picture-url,headline),likes,attachment:(image-url,content-domain,content-url,title,summary),relation-to-viewer)?category=discussion&order=popularity")
     
     # print "resp"
     # print resp
@@ -40,3 +45,5 @@ def linkedin_group_read():
     print "content"
     print content
 
+    
+  
