@@ -11,6 +11,7 @@
 *.txt
 *.tex
 /nppBackup/*
+/.idea
 \#*
 
 ###############
