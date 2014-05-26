@@ -6,6 +6,7 @@
 import oauth2 as oauth
 import httplib2
 import time, os, simplejson
+import xml.etree.ElementTree as ET
 
 #########################
 #Import secrets
@@ -42,13 +43,35 @@ def linkedin_group_read():
     
     #resp,content = client.request("http://api.linkedin.com/v1/groups/"+str(GROUP_ID)+"/posts:(title,summary,creator:(first-name,last-name,picture-url,headline),likes,attachment:(image-url,content-domain,content-url,title,summary),relation-to-viewer)?category=discussion&order=popularity")
     
-    resp,content = client.request("http://api.linkedin.com/v1/groups/"+str(GROUP_ID)+"/posts:(title,summary,attachment:(title,summary))?category=discussion&order=recency&modified-since=1302727083000&count=3")
+    resp,content = client.request("http://api.linkedin.com/v1/groups/"+str(GROUP_ID)+"/posts:(title,summary,attachment:(title,summary))?category=discussion&order=recency&count=2")
     
     # print "resp"
     # print resp
     
-    print "content"
-    print content
+    # print "content"
+    # print content
+    
+    root = ET.fromstring(content)
+    #print root
+    
+    title_list = []
+    summary_list = []
+    
+    for post in root.findall('post'):
+        title = post.find('title').text
+        title_list.append(title)
+        summary = post.find('summary').text
+        summary_list.append(summary)
+        print title+'\n'
+        print summary+'\n'
+    
+    print "lists\n"
+    for title in title_list:
+        print title+'\n'
+    
+    for summary in summary_list:
+        print summary+'\n'
+
 
     
   
