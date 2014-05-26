@@ -20,4 +20,4 @@ The entrance py code is linkedin_group.py.
 
 The initial code is based on David's code which is to generate cv/resume.
 
-
+has stopped working on this project, and transferred codes to python-linkedin project, under "example" directory, under my username.
